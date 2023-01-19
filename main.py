@@ -1,28 +1,15 @@
-money = int(input("Введите сумму вклада:"))
-per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
-deposit = []
-deposit.append(money*per_cent["ТКБ"]/100)
-deposit.append(money*per_cent["СКБ"]/100)
-deposit.append(money*per_cent["ВТБ"]/100)
-deposit.append(money*per_cent["СБЕР"]/100)
-print("Максимальная сумма, которую можно заработать:", max(deposit))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+tickets = int(input("Введите необходимое количество билетов:"))
+price = 0
+for i in range(tickets):
+    age = int(input("Возраст посетителя для билета:"))
+    if age < 18:
+        price = price + 0
+    elif 18 <= age < 25:
+        price = price + 990
+    else:
+        price = price + 1390
+if tickets > 3:
+    print("Сумма к оплате с учетом скидки: ", (price - (price / 100) * 10), "рублей")
+else:
+    print("Сумма к оплате: ", price, "рублей")
 
